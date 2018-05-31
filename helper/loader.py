@@ -321,7 +321,7 @@ class DynamicDataSets:
 		height, width = image.shape[0:2]
 
 		load_batch_size = self.batch_image_size * self.scale
-		if height < load_batch_size or width < load_batch_size:
+		if height <= load_batch_size or width <= load_batch_size:
 			return None
 
 		y = random.randrange(height - load_batch_size)
